@@ -6,7 +6,14 @@
   <component name="ProjectId" id="1esdkAuEGW6EA3nSyZt0iKWwdKF" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2569" y="248" key="CommitChangelistDialog2" timestamp="1595114421485">
+      <screen x="1680" y="23" width="2560" height="1417" />
+    </state>
+    <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595114421485" />
   </component>
 </project>

@@ -1,4 +1,10 @@
-from random import randint
+from slacker import Slacker
+import os
 
-x = randint(1, 3)
-print(x)
+SLACK_API = os.environ.get("SLACK_API")
+
+
+def send_slack_message():
+    pass
+
+
