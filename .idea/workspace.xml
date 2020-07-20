@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f0e0e1-312b-4c4d-84aa-5607904c6057" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sentiment_evaluator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/data_sources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mountain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mountain.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper_trader.py" beforeDir="false" afterPath="$PROJECT_DIR$/paper_trader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_data_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_evaluator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,29 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sentiment_evaluator">
+  <component name="RunManager" selected="Python.database_handler">
+    <configuration name="database_handler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="trading_app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database_handler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="paper_trader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="trading_app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +155,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.database_handler" />
         <item itemvalue="Python.sentiment_evaluator" />
         <item itemvalue="Python.paper_trader" />
         <item itemvalue="Python.stock_data_handler" />
@@ -150,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1595114375673</updated>
       <workItem from="1595114383488" duration="5038000" />
-      <workItem from="1595197963865" duration="4528000" />
+      <workItem from="1595197963865" duration="5895000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1595114421924</created>
@@ -173,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595119551231</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="beginnings of data handlers">
+      <created>1595203223575</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595203223575</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,37 +227,42 @@
     <MESSAGE value="updates" />
     <MESSAGE value="start of slack notification" />
     <MESSAGE value="basic skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic skeleton" />
+    <MESSAGE value="beginnings of data handlers" />
+    <option name="LAST_COMMIT_MESSAGE" value="beginnings of data handlers" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2569" y="248" key="CommitChangelistDialog2" timestamp="1595119550949">
+    <state x="2290" y="531" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595204437548">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595119550949" />
-    <state width="2516" height="546" key="GridCell.Tab.0.bottom" timestamp="1595202631076">
+    <state x="2290" y="531" key="#com.intellij.fileTypes.FileTypeChooser/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204437548" />
+    <state x="2569" y="248" key="CommitChangelistDialog2" timestamp="1595203223430">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state width="2516" height="546" key="GridCell.Tab.0.bottom/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595202631076" />
+    <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203223430" />
+    <state width="2516" height="546" key="GridCell.Tab.0.bottom" timestamp="1595203819857">
+      <screen x="1680" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2516" height="546" key="GridCell.Tab.0.bottom/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819857" />
     <state width="2516" height="546" key="GridCell.Tab.0.bottom/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595201377048" />
-    <state width="2516" height="546" key="GridCell.Tab.0.center" timestamp="1595202631075">
+    <state width="2516" height="546" key="GridCell.Tab.0.center" timestamp="1595203819856">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state width="2516" height="546" key="GridCell.Tab.0.center/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595202631075" />
+    <state width="2516" height="546" key="GridCell.Tab.0.center/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819856" />
     <state width="2516" height="546" key="GridCell.Tab.0.center/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595201377047" />
-    <state width="2516" height="546" key="GridCell.Tab.0.left" timestamp="1595202631074">
+    <state width="2516" height="546" key="GridCell.Tab.0.left" timestamp="1595203819855">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state width="2516" height="546" key="GridCell.Tab.0.left/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595202631074" />
+    <state width="2516" height="546" key="GridCell.Tab.0.left/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819855" />
     <state width="2516" height="546" key="GridCell.Tab.0.left/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595201377047" />
-    <state width="2516" height="546" key="GridCell.Tab.0.right" timestamp="1595202631076">
+    <state width="2516" height="546" key="GridCell.Tab.0.right" timestamp="1595203819857">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state width="2516" height="546" key="GridCell.Tab.0.right/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595202631076" />
+    <state width="2516" height="546" key="GridCell.Tab.0.right/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819857" />
     <state width="2516" height="546" key="GridCell.Tab.0.right/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595201377048" />
-    <state x="2561" y="467" key="Vcs.Push.Dialog.v2" timestamp="1595119552987">
+    <state x="2561" y="467" key="Vcs.Push.Dialog.v2" timestamp="1595203225549">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
-    <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595119552987" />
+    <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203225549" />
     <state x="2625" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1595118886064">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
@@ -235,8 +271,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/trading_app$paper_trader.coverage" NAME="paper_trader Coverage Results" MODIFIED="1595200628328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_app$stock_data_handler.coverage" NAME="stock_data_handler Coverage Results" MODIFIED="1595199731385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/trading_app$database_handler.coverage" NAME="database_handler Coverage Results" MODIFIED="1595203819849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_app$slacking.coverage" NAME="slacking Coverage Results" MODIFIED="1595116517530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_app$stock_data.coverage" NAME="stock_data Coverage Results" MODIFIED="1595118743402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/trading_app$sentiment_evaluator.coverage" NAME="sentiment_evaluator Coverage Results" MODIFIED="1595202631060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/trading_app$sentiment_evaluator.coverage" NAME="sentiment_evaluator Coverage Results" MODIFIED="1595203330314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
