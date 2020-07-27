@@ -17,4 +17,3 @@ class SentimentEvaluator:
 
 if __name__ == '__main__':
     se = SentimentEvaluator()
-    print(se.score_sentiment('sad sad sad. happy happy happy.'))

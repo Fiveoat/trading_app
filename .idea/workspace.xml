@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f0e0e1-312b-4c4d-84aa-5607904c6057" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mountain.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mountain.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_evaluator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,8 +155,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.data_scraper" />
-        <item itemvalue="Python.database_handler" />
         <item itemvalue="Python.sentiment_evaluator" />
+        <item itemvalue="Python.database_handler" />
         <item itemvalue="Python.paper_trader" />
         <item itemvalue="Python.stock_data_handler" />
       </list>
@@ -174,7 +174,7 @@
       <updated>1595114375673</updated>
       <workItem from="1595114383488" duration="5038000" />
       <workItem from="1595197963865" duration="5935000" />
-      <workItem from="1595797717085" duration="10691000" />
+      <workItem from="1595797717085" duration="12767000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1595114421924</created>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595204612106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DataScrapper MarketWatch, Benzinga">
+      <created>1595809901388</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595809901388</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,44 +242,61 @@
     <MESSAGE value="basic skeleton" />
     <MESSAGE value="beginnings of data handlers" />
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="DataScrapper MarketWatch, Benzinga" />
+    <option name="LAST_COMMIT_MESSAGE" value="DataScrapper MarketWatch, Benzinga" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2290" y="531" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595204437548">
       <screen x="1680" y="23" width="2560" height="1417" />
     </state>
     <state x="2290" y="531" key="#com.intellij.fileTypes.FileTypeChooser/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204437548" />
-    <state x="583" y="23" key="CommitChangelistDialog2" timestamp="1595809854652">
+    <state x="583" y="23" width="837" height="956" key="CommitChangelistDialog2" timestamp="1595809900735">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
-    <state x="583" y="23" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1595809854652" />
+    <state x="583" y="23" width="837" height="956" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1595809900735" />
     <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203223430" />
     <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204611980" />
-    <state width="1636" height="155" key="GridCell.Tab.0.bottom" timestamp="1595809677951">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state width="1636" height="281" key="GridCell.Tab.0.bottom" timestamp="1595812152150">
+      <screen x="0" y="23" width="1680" height="945" />
     </state>
-    <state width="1636" height="155" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1595809677951" />
+    <state width="1636" height="281" key="GridCell.Tab.0.bottom/0.23.1680.945@0.23.1680.945" timestamp="1595812152150" />
+    <state width="1636" height="281" key="GridCell.Tab.0.bottom/0.23.1680.948@0.23.1680.948" timestamp="1595811125823" />
+    <state width="1636" height="179" key="GridCell.Tab.0.bottom/0.23.1680.952@0.23.1680.952" timestamp="1595810206066" />
+    <state width="1636" height="455" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1595810799796" />
+    <state width="1636" height="365" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1595810550465" />
     <state width="1636" height="364" key="GridCell.Tab.0.bottom/0.23.1680.958@0.23.1680.958" timestamp="1595798785361" />
     <state width="2516" height="546" key="GridCell.Tab.0.bottom/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819857" />
     <state width="2516" height="362" key="GridCell.Tab.0.bottom/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204624038" />
-    <state width="1636" height="155" key="GridCell.Tab.0.center" timestamp="1595809677949">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state width="1636" height="281" key="GridCell.Tab.0.center" timestamp="1595812152149">
+      <screen x="0" y="23" width="1680" height="945" />
     </state>
-    <state width="1636" height="155" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1595809677949" />
+    <state width="1636" height="281" key="GridCell.Tab.0.center/0.23.1680.945@0.23.1680.945" timestamp="1595812152149" />
+    <state width="1636" height="281" key="GridCell.Tab.0.center/0.23.1680.948@0.23.1680.948" timestamp="1595811125819" />
+    <state width="1636" height="179" key="GridCell.Tab.0.center/0.23.1680.952@0.23.1680.952" timestamp="1595810206065" />
+    <state width="1636" height="455" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1595810799795" />
+    <state width="1636" height="365" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1595810550464" />
     <state width="1636" height="364" key="GridCell.Tab.0.center/0.23.1680.958@0.23.1680.958" timestamp="1595798785360" />
     <state width="2516" height="546" key="GridCell.Tab.0.center/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819856" />
     <state width="2516" height="362" key="GridCell.Tab.0.center/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204624037" />
-    <state width="1636" height="155" key="GridCell.Tab.0.left" timestamp="1595809677948">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state width="1636" height="281" key="GridCell.Tab.0.left" timestamp="1595812152148">
+      <screen x="0" y="23" width="1680" height="945" />
     </state>
-    <state width="1636" height="155" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1595809677948" />
+    <state width="1636" height="281" key="GridCell.Tab.0.left/0.23.1680.945@0.23.1680.945" timestamp="1595812152148" />
+    <state width="1636" height="281" key="GridCell.Tab.0.left/0.23.1680.948@0.23.1680.948" timestamp="1595811125818" />
+    <state width="1636" height="179" key="GridCell.Tab.0.left/0.23.1680.952@0.23.1680.952" timestamp="1595810206064" />
+    <state width="1636" height="455" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1595810799794" />
+    <state width="1636" height="365" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1595810550463" />
     <state width="1636" height="364" key="GridCell.Tab.0.left/0.23.1680.958@0.23.1680.958" timestamp="1595798785359" />
     <state width="2516" height="546" key="GridCell.Tab.0.left/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819855" />
     <state width="2516" height="362" key="GridCell.Tab.0.left/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204624037" />
-    <state width="1636" height="155" key="GridCell.Tab.0.right" timestamp="1595809677950">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state width="1636" height="281" key="GridCell.Tab.0.right" timestamp="1595812152150">
+      <screen x="0" y="23" width="1680" height="945" />
     </state>
-    <state width="1636" height="155" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1595809677950" />
+    <state width="1636" height="281" key="GridCell.Tab.0.right/0.23.1680.945@0.23.1680.945" timestamp="1595812152150" />
+    <state width="1636" height="281" key="GridCell.Tab.0.right/0.23.1680.948@0.23.1680.948" timestamp="1595811125822" />
+    <state width="1636" height="179" key="GridCell.Tab.0.right/0.23.1680.952@0.23.1680.952" timestamp="1595810206065" />
+    <state width="1636" height="455" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1595810799796" />
+    <state width="1636" height="365" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1595810550464" />
     <state width="1636" height="364" key="GridCell.Tab.0.right/0.23.1680.958@0.23.1680.958" timestamp="1595798785360" />
     <state width="2516" height="546" key="GridCell.Tab.0.right/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203819857" />
     <state width="2516" height="362" key="GridCell.Tab.0.right/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204624038" />
@@ -292,9 +316,10 @@
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1636" height="297" key="GridCell.Tab.1.right/0.23.1680.956@0.23.1680.956" timestamp="1595800440570" />
-    <state x="2561" y="467" key="Vcs.Push.Dialog.v2" timestamp="1595204614704">
-      <screen x="1680" y="23" width="2560" height="1417" />
+    <state x="578" y="323" key="Vcs.Push.Dialog.v2" timestamp="1595809904182">
+      <screen x="0" y="23" width="1680" height="956" />
     </state>
+    <state x="578" y="323" key="Vcs.Push.Dialog.v2/0.23.1680.956@0.23.1680.956" timestamp="1595809904182" />
     <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203225549" />
     <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204614704" />
     <state x="2625" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1595118886064">
@@ -308,7 +333,7 @@
     <SUITE FILE_PATH="coverage/trading_app$database_handler.coverage" NAME="database_handler Coverage Results" MODIFIED="1595203819849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_app$slacking.coverage" NAME="slacking Coverage Results" MODIFIED="1595116517530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_app$stock_data.coverage" NAME="stock_data Coverage Results" MODIFIED="1595118743402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/trading_app$sentiment_evaluator.coverage" NAME="sentiment_evaluator Coverage Results" MODIFIED="1595203330314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/trading_app$data_scraper.coverage" NAME="data_scraper Coverage Results" MODIFIED="1595809677941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/trading_app$sentiment_evaluator.coverage" NAME="sentiment_evaluator Coverage Results" MODIFIED="1595810885883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/trading_app$data_scraper.coverage" NAME="data_scraper Coverage Results" MODIFIED="1595812152136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

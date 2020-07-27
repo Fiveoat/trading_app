@@ -13,15 +13,15 @@ options.add_argument('--headless')
 class DataScraper:
     # TODO: MANY THINGS
     def __init__(self):
-        self.driver = webdriver.Chrome('./Utils/chromedriver', options=options)
+        # self.driver = webdriver.Chrome('./Utils/chromedriver', options=options)
         self.sentiment_evaluator = SentimentEvaluator()
         self.keywords = ["coronavirus", "corona", "virus", "stimulus", "buy"]
 
     @staticmethod
     def ticker_regex(text):
-        three = re.findall(r'[A-Z]{3}', text)
-        four = re.findall(r'[A-Z]{4}', text)
-        five = re.findall(r'[A-Z]{5}', text)
+        three = [x.strip() for x in re.findall(r'\b[A-Z]{3}\b', text)]
+        four = [x.strip() for x in re.findall(r'\b[A-Z]{4}\b', text)]
+        five = [x.strip() for x in re.findall(r'\b[A-Z]{5}\b', text)]
         return list(set(three + four + five))
 
     def get_market_watch_article_data(self, article_url):
@@ -32,7 +32,11 @@ class DataScraper:
             soup.find(class_="timestamp timestamp--pub").text.split("Published: ")[1].split(" ET")[0].replace("a.m.",
                                                                                                               "AM").replace(
                 "p.m.", "PM"), "%B %d, %Y at %I:%M %p"))
-        article_headline = soup.find(_class="article__headline").text
+        article_headline = article_url.split("story/")[1].split("-2020")[0].replace("-", " ")
+        try:
+            headline_sentiment = self.sentiment_evaluator.score_sentiment(article_headline)
+        except Exception:
+            headline_sentiment = None
         try:
             tickers = [[x.text for x in x.find_all(class_="symbol")] for x in soup.find_all(class_="list--tickers")][0]
         except IndexError:
@@ -48,10 +52,10 @@ class DataScraper:
         for keyword in self.keywords:
             if keyword in article_text:
                 keyword_occurrences.append(keyword)
+        data["headline_sentiment"] = headline_sentiment
         data["keyword_occurrences"] = keyword_occurrences
         data["published_datetime"] = published_datetime
         data["tickers"] = tickers
-        # data["headline_sentiment"] = headline_sentiment
         data["article_sentiment"] = article_sentiment
         return data
 
@@ -88,6 +92,5 @@ class DataScraper:
 
 if __name__ == '__main__':
     scrapper = DataScraper()
-    print(scrapper.get_benzinga_article_data(
-        "https://www.benzinga.com/news/earnings/20/07/16780984/zynga-q2-earnings-preview-what-investors-should-watch-for"))
-    print(scrapper.get_market_watch_article_data("https://www.marketwatch.com/story/anthony-fauci-tells-marketwatch-i-would-not-get-on-a-plane-or-eat-inside-a-restaurant-2020-07-24?mod=MW_article_top_stories"))
+    print(scrapper.ticker_regex("ASDF SSO TLSA AMAZ GOOG "))
+    print(scrapper.get_benzinga_article_data("https://www.benzinga.com/news/20/07/16772222/union-pacific-eyes-highway-to-rail-conversion-opportunities"))
