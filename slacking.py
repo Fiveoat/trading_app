@@ -4,8 +4,8 @@ from slacker import Slacker
 class SlackHandler:
     # TODO: INTEGRATE WITH OTHER CLASSES
     def __init__(self):
-        self.slack_api = "xoxb-1255877854884-1249693000770-KBuGSqE5BVlswuReD4vrYg4A"
-        self.slack = Slacker(self.slack_api)
+        self.slack_api_key = "xoxb-1255877854884-1249693000770-KBuGSqE5BVlswuReD4vrYg4A"
+        self.slack = Slacker(self.slack_api_key)
         self.michael = "U017BLE2JSW"
         self.fiveoat = "U0181FNLQ00"
         self.jackson = ""

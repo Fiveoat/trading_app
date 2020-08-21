@@ -92,5 +92,4 @@ class DataScraper:
 
 if __name__ == '__main__':
     scrapper = DataScraper()
-    print(scrapper.ticker_regex("ASDF SSO TLSA AMAZ GOOG "))
     print(scrapper.get_benzinga_article_data("https://www.benzinga.com/news/20/07/16772222/union-pacific-eyes-highway-to-rail-conversion-opportunities"))
