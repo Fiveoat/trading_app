@@ -1,4 +1,5 @@
 from database_handler import DatabaseHandler, PaperTrades, Tickers
+from datetime import datetime
 
 
 class PaperTrader(DatabaseHandler):
@@ -13,7 +14,9 @@ class PaperTrader(DatabaseHandler):
         trade.ticker = symbol
         trade.quantity = quantity
         trade.purchase_price = price
-        trade.active = True
+        trade.active = False
+        trade.trade_datetime = datetime.utcnow()
+        trade.user_id = 1
         self.session.add(trade)
         self.session.commit()
 
@@ -29,5 +32,9 @@ class PaperTrader(DatabaseHandler):
 
 
 if __name__ == '__main__':
-    paper_trader = PaperTrader
-    paper_trader.buy_stock(symbol="MITT", price=4.20, quantity=69)
+    paper_trader = PaperTrader()
+    # paper_trader.buy_stock("NFLX", 4.20, 69)
+    print(paper_trader.query("SELECT p.purchase_price, t.symbol, p.trade_datetime, u.first, u.last FROM users u "
+                             "INNER JOIN paper_trades p ON p.user_id = u.user_id "
+                             "INNER JOIN tickers t ON p.ticker = t.symbol "
+                             "INNER JOIN ticker_article_relationships a ON a.symbol = t.symbol"))

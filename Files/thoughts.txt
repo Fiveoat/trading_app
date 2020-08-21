@@ -1,1 +1,2 @@
 We can look backward from the stock data results & scan articles for the keywords.
+Create a PaperTrader front-end that can be used to get data on your paper trades & execute trades. Create GraphQL API.

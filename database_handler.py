@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+import csv
 
 Base = declarative_base()
 
@@ -10,7 +11,11 @@ Base = declarative_base()
 class Tickers(Base):
     __tablename__ = 'tickers'
     symbol = Column(String, primary_key=True)
+    company_name = Column(String)
     exchange = Column(String)
+    sector = Column(String)
+    industry = Column(String)
+    market_cap = Column(String)
 
 
 class Sources(Base):
@@ -53,6 +58,15 @@ class PaperTrades(Base):
     trade_datetime = Column(DateTime)
     quantity = Column(Integer)
     active = Column(Boolean)
+    user_id = Column(Integer, ForeignKey("users.user_id"))
+
+
+class Users(Base):
+    __tablename__ = "users"
+    user_id = Column(Integer, primary_key=True)
+    first = Column(String)
+    last = Column(String)
+    email = Column(String)
 
 
 class PaperTradeTickerRelationships(Base):
@@ -86,6 +100,38 @@ class DatabaseHandler:
     def __exit__(self):
         self.session.close()
 
+    def load_tickers(self):
+        with open("Files/NYSE.csv") as file:
+            for row in csv.DictReader(file):
+                try:
+                    ticker = Tickers()
+                    ticker.symbol = row["Symbol"]
+                    ticker.exchange = "NYSE"
+                    ticker.company_name = row["Name"]
+                    ticker.market_cap = row["MarketCap"]
+                    ticker.sector = row["Sector"]
+                    ticker.industry = row["industry"]
+                    self.session.add(ticker)
+                    self.session.commit()
+                except Exception:
+                    self.session.rollback()
+        with open("Files/NASDAQ.csv") as file:
+            for row in csv.DictReader(file):
+                try:
+                    ticker = Tickers()
+                    ticker.symbol = row["Symbol"]
+                    ticker.exchange = "NASDAQ"
+                    ticker.company_name = row["Name"]
+                    ticker.market_cap = row["MarketCap"]
+                    ticker.sector = row["Sector"]
+                    ticker.industry = row["industry"]
+                    self.session.add(ticker)
+                    self.session.commit()
+                except Exception:
+                    self.session.rollback()
+
 
 if __name__ == '__main__':
     db_handler = DatabaseHandler()
+    db_handler._create_database()
+    db_handler.load_tickers()

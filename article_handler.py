@@ -27,4 +27,5 @@ class ArticleHandler(DatabaseHandler):
 
 if __name__ == '__main__':
     article_handler = ArticleHandler()
-    article_handler.insert_article("Apple Acquires Google", "marketwatch.com/id=adjfklanien", .999, datetime.utcnow())
+    article_handler.insert_article("Apple Acquires Google", "marketwatch.com/id=adjfklanien", .999, datetime.utcnow(),
+                                   "MarketWatch", ["APPL", "GOOG"])
