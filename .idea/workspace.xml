@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8f0e0e1-312b-4c4d-84aa-5607904c6057" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Files/data.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/thoughts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/thoughts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper_trader.py" beforeDir="false" afterPath="$PROJECT_DIR$/paper_trader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +205,7 @@
       <workItem from="1595197963865" duration="5935000" />
       <workItem from="1595797717085" duration="12789000" />
       <workItem from="1596820913414" duration="1200000" />
-      <workItem from="1597802774301" duration="17907000" />
+      <workItem from="1597802774301" duration="18289000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1595114421924</created>
@@ -278,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597989998104</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updates">
+      <created>1597994491222</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597994491222</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,11 +319,11 @@
     </state>
     <state x="400" y="366" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.956@0.23.1680.956" timestamp="1597978346926" />
     <state x="2290" y="531" key="#com.intellij.fileTypes.FileTypeChooser/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204437548" />
-    <state x="583" y="23" width="837" height="954" key="CommitChangelistDialog2" timestamp="1597989997803">
+    <state x="583" y="23" width="837" height="954" key="CommitChangelistDialog2" timestamp="1597994491034">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="583" y="23" key="CommitChangelistDialog2/0.23.1680.945@0.23.1680.945" timestamp="1595812497749" />
-    <state x="583" y="23" width="837" height="954" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1597989997803" />
+    <state x="583" y="23" width="837" height="954" key="CommitChangelistDialog2/0.23.1680.954@0.23.1680.954" timestamp="1597994491034" />
     <state x="583" y="23" width="837" height="956" key="CommitChangelistDialog2/0.23.1680.956@0.23.1680.956" timestamp="1595809900735" />
     <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203223430" />
     <state x="2569" y="248" key="CommitChangelistDialog2/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204611980" />
@@ -400,11 +399,11 @@
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="239" height="539" key="HiddenNamespacesPopup/0.23.1680.956@0.23.1680.956" timestamp="1597976018078" />
-    <state x="578" y="323" key="Vcs.Push.Dialog.v2" timestamp="1597990000825">
+    <state x="578" y="323" key="Vcs.Push.Dialog.v2" timestamp="1597994492818">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="578" y="320" key="Vcs.Push.Dialog.v2/0.23.1680.945@0.23.1680.945" timestamp="1595812502133" />
-    <state x="578" y="323" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1597990000825" />
+    <state x="578" y="323" key="Vcs.Push.Dialog.v2/0.23.1680.954@0.23.1680.954" timestamp="1597994492818" />
     <state x="578" y="323" key="Vcs.Push.Dialog.v2/0.23.1680.956@0.23.1680.956" timestamp="1595809904182" />
     <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.956@1680.23.2560.1417" timestamp="1595203225549" />
     <state x="2561" y="467" key="Vcs.Push.Dialog.v2/1680.23.2560.1417/0.23.1680.958@1680.23.2560.1417" timestamp="1595204614704" />

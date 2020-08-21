@@ -1,10 +1,12 @@
 from database_handler import DatabaseHandler, PaperTrades, Tickers
+from slacking import SlackHandler
 from datetime import datetime
 
 
 class PaperTrader(DatabaseHandler):
     def __init__(self):
         super().__init__()
+        self.slack = SlackHandler()
 
     def buy_stock(self, symbol, price, quantity):
         # TODO : CHECK IF ALREADY OWNED
@@ -19,6 +21,8 @@ class PaperTrader(DatabaseHandler):
         trade.user_id = 1
         self.session.add(trade)
         self.session.commit()
+        self.slack.send_message(self.slack.fiveoat,
+                                f"Your purchase of {quantity} shares of {symbol} at ${price} was successful.")
 
     def sell_stock(self, symbol, price, quantity):
         current_holding = [x for x in self.session.query(PaperTrades).filter_by(ticker=symbol).all()][0]
