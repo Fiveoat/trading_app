@@ -1,19 +1,13 @@
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from sentiment_evaluator import SentimentEvaluator
 import datetime
 import requests
 import re
 
-options = Options()
-options.add_argument('--headless')
-
 
 class DataScraper:
     # TODO: MANY THINGS
     def __init__(self):
-        # self.driver = webdriver.Chrome('./Utils/chromedriver', options=options)
         self.sentiment_evaluator = SentimentEvaluator()
         self.keywords = ["coronavirus", "corona", "virus", "stimulus", "buy"]
 

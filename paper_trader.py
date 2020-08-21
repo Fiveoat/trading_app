@@ -1,47 +1,33 @@
-import csv
-from stock_data_handler import StockDataHandler
+from database_handler import DatabaseHandler, PaperTrades, Tickers
 
 
-class PaperTrader:
-    def __init__(self, user):
-        self.user = user
+class PaperTrader(DatabaseHandler):
+    def __init__(self):
+        super().__init__()
 
-    def read_current_csv(self):
-        with open(f"Files/{self.user}_trades.csv", "r") as trades:
-            for row in csv.DictReader(trades):
-                print(row)
+    def buy_stock(self, symbol, price, quantity):
+        # TODO : CHECK IF ALREADY OWNED
+        if symbol not in [x.symbol for x in self.session.query(Tickers).all()]:
+            raise ValueError()
+        trade = PaperTrades()
+        trade.ticker = symbol
+        trade.quantity = quantity
+        trade.purchase_price = price
+        trade.active = True
+        self.session.add(trade)
+        self.session.commit()
 
-    def buy_stock(self, ticker, price, limit_order=None, stop_loss=None):
-        # TODO: HOOK UP STOCK DATA TO BUY, WRITE TO INDIVIDUAL FILES
-        headers = ["Ticker", "Purchase Price", "Current Price", "Stop Loss", "Limit Order", "Percent Return", "Active"]
-        with open(f"Files/{self.user}_trades.csv", "w+") as trades:
-            writer = csv.DictWriter(trades, fieldnames=headers)
-            stock_data_handler = StockDataHandler(ticker)
-            current_price = stock_data_handler.get_today_data()['Close']
-            writer.writerow(
-                {'Ticker': ticker, 'Purchase Price': price, 'Current Price': current_price, 'Stop Loss': stop_loss,
-                 'Limit Order': limit_order, 'Percent Return': "", 'Active': True})
+    def sell_stock(self, symbol, price, quantity):
+        current_holding = [x for x in self.session.query(PaperTrades).filter_by(ticker=symbol).all()][0]
+        if quantity == current_holding.quantity:
+            current_holding.active = False
+        net_price = price - current_holding.purchase_price
+        net_total = net_price * quantity
 
-    def sell_stock(self, ticker, price, limit_order=None):
-        # TODO: HOOK UP STOCK DATA TO SELL, WRITE TO INDIVIDUAL FILES
-        headers = ["Ticker", "Purchase Price", "Current Price", "Stop Loss", "Limit Order", "Percent Return",
-                   "Active"]
-        with open(f"Files/{self.user}_trades.csv", "w+") as trades:
-            writer = csv.DictWriter(trades, headers)
-            writer.writerow([ticker, price, "", "", limit_order, "", ""])
-
-    def update_current_holdings(self):
-        # TODO: MAKE CSV OUTLINE / WRITE DATA, READ EXISTING DATA
-        headers = ["Ticker", "Purchase Price", "Current Price", "Stop Loss", "Limit Order", "Percent Return",
-                   "Active"]
-        with open(f"Files/{self.user}_trades.csv", "w+") as trades:
-            writer = csv.writer(trades)
-            writer.writerow(headers)
+    def get_current_holdings(self, ticker=None):
+        pass
 
 
 if __name__ == '__main__':
-    paper_trader = PaperTrader("fiveoat")
-    paper_trader.buy_stock("MITT", 3.50, 3.5, .1)
-    paper_trader.read_current_csv()
-    paper_trader.buy_stock("BA", 241.88, 241, .05)
-    paper_trader.read_current_csv()
+    paper_trader = PaperTrader
+    paper_trader.buy_stock(symbol="MITT", price=4.20, quantity=69)

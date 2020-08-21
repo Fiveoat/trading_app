@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -45,6 +45,23 @@ class SourceArticleRelationships(Base):
     created_datetime = datetime.utcnow()
 
 
+class PaperTrades(Base):
+    __tablename__ = 'paper_trades'
+    trade_id = Column(Integer, primary_key=True)
+    ticker = Column(String)
+    purchase_price = Column(Integer)
+    trade_datetime = Column(DateTime)
+    quantity = Column(Integer)
+    active = Column(Boolean)
+
+
+class PaperTradeTickerRelationships(Base):
+    __tablename__ = 'paper_trade_ticker_relationships'
+    trade_ticker_relationship_id = Column(Integer, primary_key=True)
+    ticker = Column(String, ForeignKey('tickers.symbol'))
+    trade_id = Column(Integer, ForeignKey('paper_trades.trade_id'))
+
+
 class DatabaseHandler:
     def __init__(self):
         self.engine = create_engine('sqlite:///Files/data.sqlite', echo=True)
@@ -63,24 +80,6 @@ class DatabaseHandler:
             print(e)
             return False
 
-    def insert_article(self, title, url, sentiment, published_datetime, source, tickers):
-        article = Articles()
-        article.title = title
-        article.url = url
-        article.sentiment = sentiment
-        article.published_datetime = published_datetime
-        sar = SourceArticleRelationships()
-        sar.source_id = source  # GET PROPER SOURCE ID ( LOOKUP )
-        sar.article_id = article.article_id  # NEEDS INSERTED & ARTICLE ID LOOKED UP
-        for ticker in tickers:
-            tar = TickerArticleRelationships()
-            tar.article_id = article.article_id  # NEEDS INSERTED & ARTICLE ID LOOKED UP
-            tar.symbol = ticker  # GET PROPER SYMBOL ( LOOKUP )
-            self.session.add(tar)
-        self.session.add(sar)
-        self.session.add(article)
-        self.session.commit()
-
     def _create_database(self):
         Base.metadata.create_all(bind=self.engine)
 
@@ -89,6 +88,4 @@ class DatabaseHandler:
 
 
 if __name__ == '__main__':
-    database_handler = DatabaseHandler()
-    database_handler.insert_article("MITT Skyrockets With Google Merger Talks", "marketwatch.com/yh34ubbali4", .89,
-                                    datetime.now(), "MarketWatch", ["MITT", "GOOG"])
+    db_handler = DatabaseHandler()
