@@ -60,8 +60,8 @@ if __name__ == '__main__':
     paper_trader.get_current_holdings(1)
     # paper_trader.sell_stock("FB", 5.80, 60)
     # paper_trader.buy_stock("FB", 4.20, 69)
-    # print(paper_trader.query("SELECT p.purchase_price, t.symbol, p.trade_datetime, u.first, u.last, ar.title, ar.sentiment FROM users u "
-    #                          "INNER JOIN paper_trades p ON p.user_id = u.user_id "
-    #                          "INNER JOIN tickers t ON p.ticker = t.symbol "
-    #                          "INNER JOIN ticker_article_relationships a ON a.symbol = t.symbol "
-    #                          "INNER JOIN articles ar ON a.article_id = ar.article_id"))
+    print(paper_trader.query("SELECT p.purchase_price, t.symbol, p.trade_datetime, u.first, u.last, ar.title, ar.sentiment FROM users u "
+                             "INNER JOIN paper_trades p ON p.user_id = u.user_id "
+                             "INNER JOIN tickers t ON p.ticker = t.symbol "
+                             "INNER JOIN ticker_article_relationships a ON a.symbol = t.symbol "
+                             "INNER JOIN articles ar ON a.article_id = ar.article_id"))

@@ -22,15 +22,15 @@ class DataScraper:
         data = {}
         keyword_occurrences = []
         soup = BeautifulSoup(requests.get(article_url).text, features="html.parser")
-        published_datetime = str(datetime.datetime.strptime(
-            soup.find(class_="timestamp timestamp--pub").text.split("Published: ")[1].split(" ET")[0].replace("a.m.",
-                                                                                                              "AM").replace(
-                "p.m.", "PM"), "%B %d, %Y at %I:%M %p"))
-        article_headline = article_url.split("story/")[1].split("-2020")[0].replace("-", " ")
-        try:
-            headline_sentiment = self.sentiment_evaluator.score_sentiment(article_headline)
-        except Exception:
-            headline_sentiment = None
+        # published_datetime = str(datetime.datetime.strptime(
+        #     soup.find(class_="timestamp timestamp--pub").text.split("Published: ")[1].split(" ET")[0].replace("a.m.",
+        #                                                                                                       "AM").replace(
+        #         "p.m.", "PM"), "%B %d, %Y at %I:%M %p"))
+        # article_headline = article_url.split("story/")[1].split("-2020")[0].replace("-", " ")
+        # try:
+        #     headline_sentiment = self.sentiment_evaluator.score_sentiment(article_headline)
+        # except Exception:
+        #     headline_sentiment = None
         try:
             tickers = [[x.text for x in x.find_all(class_="symbol")] for x in soup.find_all(class_="list--tickers")][0]
         except IndexError:
@@ -46,9 +46,9 @@ class DataScraper:
         for keyword in self.keywords:
             if keyword in article_text:
                 keyword_occurrences.append(keyword)
-        data["headline_sentiment"] = headline_sentiment
+        # data["headline_sentiment"] = headline_sentiment
         data["keyword_occurrences"] = keyword_occurrences
-        data["published_datetime"] = published_datetime
+        # data["published_datetime"] = published_datetime
         data["tickers"] = tickers
         data["article_sentiment"] = article_sentiment
         return data
@@ -85,5 +85,6 @@ class DataScraper:
 
 
 if __name__ == '__main__':
-    scrapper = DataScraper()
-    print(scrapper.get_benzinga_article_data("https://www.benzinga.com/news/20/07/16772222/union-pacific-eyes-highway-to-rail-conversion-opportunities"))
+    scraper = DataScraper()
+    print(scraper.get_market_watch_article_data("https://www.marketwatch.com/articles/carnival-plans-to-set-sail-in-europe-early-next-month-51598099401?mod=home-page"))
+    # print(scrapper.get_benzinga_article_data("https://www.benzinga.com/news/20/07/16772222/union-pacific-eyes-highway-to-rail-conversion-opportunities"))
