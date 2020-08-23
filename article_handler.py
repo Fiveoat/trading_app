@@ -1,4 +1,4 @@
-from database_handler import DatabaseHandler, Articles, SourceArticleRelationships, TickerArticleRelationships
+from database_handler import DatabaseHandler, Articles, SourceArticleRelationships, TickerArticleRelationships, Sources
 from datetime import datetime
 
 
@@ -12,20 +12,23 @@ class ArticleHandler(DatabaseHandler):
         article.url = url
         article.sentiment = sentiment
         article.published_datetime = published_datetime
+        self.session.add(article)
+        self.session.commit()
+        article_id = [x.article_id for x in self.session.query(Articles).filter_by(url=url).all()][0]
         sar = SourceArticleRelationships()
-        sar.source_id = source  # GET PROPER SOURCE ID ( LOOKUP )
-        sar.article_id = article.article_id  # NEEDS INSERTED & ARTICLE ID LOOKED UP
+        source_id = self.session.query(Sources).filter_by(source_name=source).all()[0].source_id
+        sar.source_id = source_id
+        sar.article_id = article_id
         for ticker in tickers:
             tar = TickerArticleRelationships()
-            tar.article_id = article.article_id  # NEEDS INSERTED & ARTICLE ID LOOKED UP
-            tar.symbol = ticker  # GET PROPER SYMBOL ( LOOKUP )
+            tar.article_id = article_id
+            tar.symbol = ticker
             self.session.add(tar)
         self.session.add(sar)
-        self.session.add(article)
         self.session.commit()
 
 
 if __name__ == '__main__':
     article_handler = ArticleHandler()
-    article_handler.insert_article("Apple Acquires Google", "marketwatch.com/id=adjfklanien", .999, datetime.utcnow(),
-                                   "MarketWatch", ["APPL", "GOOG"])
+    article_handler.insert_article("Facebook Bankrupt", "marketwatch.com/id=adgaf4n", -.999, datetime.utcnow(),
+                                   "MarketWatch", ["FB", "GOOG", "NFLX"])

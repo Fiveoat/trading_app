@@ -1,11 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from datetime import datetime
-import csv
 
 Base = declarative_base()
+engine = create_engine('sqlite:///Files/data.sqlite')
+db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 
 
 class Tickers(Base):
@@ -78,7 +79,7 @@ class PaperTradeTickerRelationships(Base):
 
 class DatabaseHandler:
     def __init__(self):
-        self.engine = create_engine('sqlite:///Files/data.sqlite', echo=True)
+        self.engine = create_engine('sqlite:///Files/data.sqlite')
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
@@ -90,48 +91,21 @@ class DatabaseHandler:
             self.engine.execute(sql_statement)
             self.session.commit()
             return True
-        except Exception as e:
-            print(e)
+        except Exception:
             return False
 
     def _create_database(self):
         Base.metadata.create_all(bind=self.engine)
 
+    def wipe_tables(self):
+        tables = ["articles", "paper_trade_ticker_relationships", "paper_trades", "source_article_relationships",
+                  "ticker_article_relationships", "users"]
+        [self.commit(f"DELETE FROM {table}") for table in tables]
+
     def __exit__(self):
         self.session.close()
-
-    def load_tickers(self):
-        with open("Files/NYSE.csv") as file:
-            for row in csv.DictReader(file):
-                try:
-                    ticker = Tickers()
-                    ticker.symbol = row["Symbol"]
-                    ticker.exchange = "NYSE"
-                    ticker.company_name = row["Name"]
-                    ticker.market_cap = row["MarketCap"]
-                    ticker.sector = row["Sector"]
-                    ticker.industry = row["industry"]
-                    self.session.add(ticker)
-                    self.session.commit()
-                except Exception:
-                    self.session.rollback()
-        with open("Files/NASDAQ.csv") as file:
-            for row in csv.DictReader(file):
-                try:
-                    ticker = Tickers()
-                    ticker.symbol = row["Symbol"]
-                    ticker.exchange = "NASDAQ"
-                    ticker.company_name = row["Name"]
-                    ticker.market_cap = row["MarketCap"]
-                    ticker.sector = row["Sector"]
-                    ticker.industry = row["industry"]
-                    self.session.add(ticker)
-                    self.session.commit()
-                except Exception:
-                    self.session.rollback()
 
 
 if __name__ == '__main__':
     db_handler = DatabaseHandler()
-    db_handler._create_database()
-    db_handler.load_tickers()
+    db_handler.wipe_tables()
