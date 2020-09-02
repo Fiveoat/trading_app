@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-python app.python
+python app.py
 exec "$@"
