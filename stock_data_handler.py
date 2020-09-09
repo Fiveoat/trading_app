@@ -17,5 +17,5 @@ class StockDataHandler:
 
 if __name__ == '__main__':
     stock_data = StockDataHandler('FB')
-    print(stock_data.get_today_data())
+    print(stock_data.get_today_data().Close)
     print(stock_data.get_past_data(10))
