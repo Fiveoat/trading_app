@@ -89,7 +89,7 @@ pendulum==2.1.0
 pexpect==4.8.0
 phonenumbers==8.12.1
 pickleshare==0.7.5
-Pillow==7.1.2
+Pillow==8.1.1
 pluggy==0.13.1
 prometheus-client==0.7.1
 promise==2.0.2
