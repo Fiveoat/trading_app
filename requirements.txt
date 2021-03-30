@@ -100,7 +100,7 @@ pyally==0.3.4
 pyarrow==0.17.1
 pycparser==2.20
 pycurl==7.43.0
-Pygments==2.6.1
+Pygments==2.7.4
 PyJWT==1.7.1
 pylint==2.4.4
 PyMySQL==0.9.3
