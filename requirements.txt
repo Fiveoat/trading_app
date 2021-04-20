@@ -95,7 +95,7 @@ prometheus-client==0.7.1
 promise==2.0.2
 prompt-toolkit==3.0.5
 ptyprocess==0.6.0
-py==1.8.1
+py==1.10.0
 pyally==0.3.4
 pyarrow==0.17.1
 pycparser==2.20
